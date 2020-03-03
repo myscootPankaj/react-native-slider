@@ -269,6 +269,7 @@ export default class Slider extends PureComponent {
     const touchOverflowStyle = this._getTouchOverflowStyle();
 
     return (
+      <View>
       <View
         {...other}
         style={[mainStyles.container, style]}
@@ -310,8 +311,21 @@ export default class Slider extends PureComponent {
           {debugTouchArea === true &&
             this._renderDebugThumbTouchRect(minimumTrackWidth)}
         </View>
-        <Text style={{letterSpacing: thumbLeft || 0}} >0 1 2 3 4 5 6 7 8 9 10</Text>
       </View>
+      <View style={{flex: 1, flexDirection: 'row'}}>
+      <Text style={{flex: 1}} >0</Text>
+      <Text style={{flex: 1}} >1</Text>
+      <Text style={{flex: 1}} >2</Text>
+      <Text style={{flex: 1}} >3</Text>
+      <Text style={{flex: 1}} >4</Text>
+      <Text style={{flex: 1}} >5</Text>
+      <Text style={{flex: 1}} >6</Text>
+      <Text style={{flex: 1}} >7</Text>
+      <Text style={{flex: 1}} >8</Text>
+      <Text style={{flex: 1}} >9</Text>
+      <Text style={{flex: 1}} >10</Text>
+    </View>
+    </View>
     );
   }
 
