@@ -313,20 +313,32 @@ export default class Slider extends PureComponent {
         </View>
       </View>
       <View style={{flex: 1, flexDirection: 'row'}}>
-      <Text style={{flex: 1}} >0</Text>
-      <Text style={{flex: 1}} >1</Text>
-      <Text style={{flex: 1}} >2</Text>
-      <Text style={{flex: 1}} >3</Text>
-      <Text style={{flex: 1}} >4</Text>
-      <Text style={{flex: 1}} >5</Text>
-      <Text style={{flex: 1}} >6</Text>
-      <Text style={{flex: 1}} >7</Text>
-      <Text style={{flex: 1}} >8</Text>
-      <Text style={{flex: 1}} >9</Text>
-      <Text style={{flex: 1}} >10</Text>
+            {this._setSliderScale(minimumValue, maximumValue, thumbSize.width / 2)}
     </View>
     </View>
     );
+  }
+
+  _setSliderScale(minimumValue = 0, maximumValue = 0, imgWidth = 10) {
+    let items = [];
+    if (minimumValue != maximumValue) {
+      for(let i = minimumValue; i <= maximumValue; i++) {
+        if(i < maximumValue/2) {
+          items.push(
+            <Text style={{flex: 1, paddingLeft: (i === minimumValue) ? 0: imgWidth}} >{i}</Text>
+          );
+        } else if (i === maximumValue/2)  {
+          items.push(
+            <Text style={{flex: 1, textAlign: 'center'}} >{i}</Text>
+          );
+        } else {
+          items.push(
+            <Text style={{flex: 1, textAlign: 'right', paddingRight: (i === maximumValue) ? 0 : imgWidth}} >{i}</Text>
+          );
+        }
+      }
+    }
+    return items;
   }
 
   _getPropsForComponentUpdate(props) {
