@@ -7,7 +7,7 @@
     "lib",
     "src"
   ],
-  "author": "Jean Regisser <jean.regisser@gmail.com> (https://github.com/jeanregisser)",
+  "author": "Pankaj Chauhan <pankaj@myscoot.in> (https://github.com/myscootPankaj)",
   "keywords": [
     "react-component",
     "react-native",
@@ -17,14 +17,14 @@
   ],
   "license": "MIT",
   "scripts": {
-    "clean": "rimraf lib",
+    "clean": "rimraf src",
     "start": "node_modules/react-native/packager/packager.sh",
-    "build": "babel src --out-dir lib",
+    "build": "babel src --out-dir src",
     "prepublish": "npm run clean && npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:jeanregisser/react-native-slider.git"
+    "url": "git@github.com:myscootPankaj/react-native-slider.git"
   },
   "dependencies": {
     "prop-types": "^15.5.6"
